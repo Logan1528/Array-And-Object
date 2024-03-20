@@ -1,0 +1,57 @@
+1. In the following shopping cart add, remove, and edit items
+
+=> const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+
+//* Add 'Meat' in the beginning of your shopping cart if it has not been already added
+
+	const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
+
+	const add = shoppingCart.unshift('Meat');
+
+	console.log(shoppingCart);
+
+Ouput
+
+	[ 'Meat', 'Milk', 'Coffee', 'Tea', 'Honey' ];
+
+
+
+// * add Sugar at the end of your shopping cart if it has not been already added
+
+	const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
+
+	const add = shoppingCart.push('Sugar');
+
+	console.log(shoppingCart);
+
+Output
+
+	[ 'Milk', 'Coffee', 'Tea', 'Honey', 'Sugar' ]
+
+
+// * remove 'Honey' if you are allergic to honey
+    
+	const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
+	    
+	const add = shoppingCart.pop('Honey');
+    
+    	console.log(shoppingCart);
+
+Output
+	[ 'Milk', 'Coffee', 'Tea' ]
+
+
+
+// * remove 'Honey' if you are allergic to honey
+    
+  	const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
+    
+	const add = shoppingCart.splice(2,1,'Green Tea');
+    
+	console.log(shoppingCart);
+
+Output
+
+	[ 'Milk', 'Coffee', 'Green Tea', 'Honey' ]
+
+	

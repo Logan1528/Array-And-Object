@@ -1,0 +1,105 @@
+3.Object Extensibility and Sealing
+
+a) Use the Object.preventExtensions method to prevent any further additions of properties
+ to the student object.
+
+	const student = {
+    	    name: "Sajith",
+	    age: 25,
+	    grade: "A"
+	};
+
+	Object.preventExtensions(student);
+
+	student.address = "cross cut street";
+
+	console.log(student); 
+
+Output:
+	{ name: 'John', age: 20, grade: 'A' }
+
+
+b) Use the Object.isExtensible method to check if the student object is extensible. 
+Store the result in a variable called extensibleStatus.
+
+const student = {
+    	name: "Sajith",
+	    age: 25,
+	    grade: "A"
+	};
+	
+	Object.isExtensible(student);
+
+    student.extensibleStatus = "extensible";
+
+	console.log(student);
+
+Output:
+
+	{ name: 'Sajith', age: 25, grade: 'A', extensibleStatus: 'extensible' }
+
+c) Create a new object called teacher with a 'subject' property set to 'Math'.
+
+const teacher = {
+    	subject:'Math'
+	};
+	
+	
+	console.log(teacher); 
+
+Output:
+
+	{ subject: 'Math' }
+
+d) Use the Object.seal method to seal the teacher object, preventing any additions or deletions of properties.
+
+const teacher = {
+    	subject:'Math'
+	};
+	
+        Object.seal(teacher);
+        teacher.mark = 80;
+	console.log(teacher); 
+
+Output:
+
+	{ subject: 'Math' }
+
+e) Use the Object.isSealed method to check if the teacher object is sealed. Store the result in a variable called sealedStatus.
+
+const teacher = {
+    	subject:'Math'
+	};
+	
+    Object.isSealed(teacher);
+    teacher.sealedStatus = "not sealed";
+	console.log(teacher);
+	
+Output:
+
+	{ subject: 'Math', sealedStatus: 'not sealed' }	
+
+
+f) Print the extensibleStatus and sealedStatus to the console.
+
+const student = {
+    	name: "karthik",
+	    age: 25,
+	    grade: "A"
+	};
+	
+	Object.preventExtensions(student);
+	
+	const extensibleStatus = Object.isExtensible(student);
+	
+	const sealedStatus = Object.isSealed(student);
+    
+	console.log("Extensible Status:", extensibleStatus);
+    console.log("Sealed Status:", sealedStatus);
+
+Output:
+
+	Extensible Status: false
+	Sealed Status: false
+
+

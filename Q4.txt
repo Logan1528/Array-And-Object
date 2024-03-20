@@ -1,0 +1,203 @@
+4. Assignment: Building a Student Management System
+
+a. Add a Student: Create a function to add a new student to the array.
+
+
+	const students = [
+	{ id: 1, firstName: "John", lastName: "Doe", age: 20, grade:
+	"A" },
+	{ id: 2, firstName: "Jane", lastName: "Smith", age: 22, grade:
+	"B" },
+	{ id: 3, firstName: "Bob", lastName: "Johnson", age: 19, grade:
+	"A" },
+	];
+
+	function newStudent(update){
+ 	   students.add = update;
+	}
+
+	newStudent({ id: 4, firstName: "Gladin", lastName: "Jose", age: 25, grade:"A" });
+
+	console.log(students);
+
+Output:
+	[
+	  { id: 1, firstName: 'John', lastName: 'Doe', age: 20, grade: 'A' },
+	  { id: 2, firstName: 'Jane', lastName: 'Smith', age: 22, grade: 'B' },
+	  { id: 3, firstName: 'Bob', lastName: 'Johnson', age: 19, grade: 'A' },
+	  add: { id: 4, firstName: 'Gladin', lastName: 'Jose', age: 25, grade: 'A' }
+	]
+
+b. Update Student Information: Create a function to update a student's information based on their id.
+
+
+
+	const students = [
+	{ id: 1, firstName: "John", lastName: "Doe", age: 20, grade:
+	"A" },
+	{ id: 2, firstName: "Jane", lastName: "Smith", age: 22, grade:
+	"B" },
+	{ id: 3, firstName: "Bob", lastName: "Johnson", age: 19, grade:
+	"A" },
+	];
+
+	function updateStudentInfo(id, updatedInfo){
+    
+    		const index = students.findIndex(student => student.id === id);
+    
+    		if (index !== -1) {
+	        	students[index] = { ...students[index], ...updatedInfo };
+	     		   return true; 
+		    }
+		    return false
+		}
+
+	const success = updateStudentInfo(2, { firstName: "Janet", age: 23 });
+
+	if (success) {
+
+	    console.log("Student information updated successfully.");
+    
+	} else {
+    
+    	console.log("Student with the given ID not found.");
+    
+	}
+
+	console.log(students);
+
+Output:
+	Student information updated successfully.
+	[
+	  { id: 1, firstName: 'John', lastName: 'Doe', age: 20, grade: 'A' },
+	  { id: 2, firstName: 'Janet', lastName: 'Smith', age: 23, grade: 'B' },
+	  { id: 3, firstName: 'Bob', lastName: 'Johnson', age: 19, grade: 'A' }
+	]
+
+
+c. Delete a Student: Create a function to delete a student based on their id.
+
+	const students = [
+	{ id: 1, firstName: "John", lastName: "Doe", age: 20, grade:
+	"A" },
+	{ id: 2, firstName: "Jane", lastName: "Smith", age: 22, grade:
+	"B" },
+	{ id: 3, firstName: "Bob", lastName: "Johnson", age: 19, grade:
+	"A" },
+	];
+
+	function deleteStudentById(id) {
+    
+    	const index = students.findIndex(student => student.id === id);
+    
+    	if (index !== -1) {
+        	students.splice(index, 1);
+	        console.log(`Student with id ${id} deleted successfully.`);
+	    } else{
+        	console.log(`Student with id ${id} not found.`);
+   	}
+    
+	}
+
+	deleteStudentById(1); 
+
+	console.log(students);
+
+Output:
+	Student with id 1 deleted successfully.
+	[
+	  { id: 2, firstName: 'Jane', lastName: 'Smith', age: 22, grade: 'B' },
+	  { id: 3, firstName: 'Bob', lastName: 'Johnson', age: 19, grade: 'A' }
+	]
+
+
+d. List All Students: Create a function to display a list of all students.
+
+	const students = [
+	{ id: 1, firstName: "Karthik", lastName: "Doe", age: 20, grade:
+	"A" },
+	{ id: 2, firstName: "Vijai", lastName: "Smith", age: 22, grade:
+	"B" },
+	{ id: 3, firstName: "Ajith", lastName: "Johnson", age: 19, grade:
+	"A" },
+	];
+
+	function listAllStudents() {
+	    students.forEach(student => {
+        	console.log(`ID: ${student.id}, Name: ${student.firstName} ${student.lastName}, Age: ${student.age}, Grade: ${student.grade}`);
+ 	   });
+	}
+
+	listAllStudents();	
+
+Output:
+
+	ID: 1, Name: Karthik Doe, Age: 20, Grade: A
+	ID: 2, Name: Vijai Smith, Age: 22, Grade: B
+	ID: 3, Name: Ajith Johnson, Age: 19, Grade: A
+
+
+e. Find Students by Grade: Create a function to find all students who have a specific grade.
+
+	const students = [
+	{ id: 1, firstName: "Karthik", lastName: "Doe", age: 20, grade:
+	"A" },	
+	{ id: 2, firstName: "Vijai", lastName: "Smith", age: 22, grade:
+	"B" },
+	{ id: 3, firstName: "Ajith", lastName: "Johnson", age: 19, grade:
+	"A" },
+	];
+
+	function findStudentsByGrade(students, grade) {
+	    return students.filter(student => student.grade === grade);
+	}
+
+	const gradeAStudents = findStudentsByGrade(students, "A");
+	console.log("Students with grade A:", gradeAStudents);
+
+	const gradeBStudents = findStudentsByGrade(students, "B");
+	console.log("Students with grade B:", gradeBStudents);
+
+
+Output:
+		Students with grade A: [
+	  { id: 1, firstName: 'Karthik', lastName: 'Doe', age: 20, grade: 'A' },
+	  {
+	    id: 3,
+	    firstName: 'Ajith',
+	    lastName: 'Johnson',
+	    age: 19,
+	    grade: 'A'
+	  }
+	]
+	Students with grade B: [
+	  { id: 2, firstName: 'Vijai', lastName: 'Smith', age: 22, grade: 'B' }
+	]
+
+f.Calculate Average Age: Create a function to calculate the average age of all students using array method.
+
+
+	const students = [
+	{ id: 1, firstName: "Karthik", lastName: "Doe", age: 20, grade:
+	"A" },
+	{ id: 2, firstName: "Vijai", lastName: "Smith", age: 22, grade:
+	"B" },
+	{ id: 3, firstName: "Ajith", lastName: "Johnson", age: 19, grade:
+	"A" },
+	];
+
+	function calculateAverageAge(students) {
+	    const totalAge = students.reduce((sum, student) => sum + student.age, 0);
+	    return totalAge / students.length;
+	}
+
+	const averageAge = calculateAverageAge(students);
+	console.log("Average age of students:", averageAge);
+
+
+
+Outpu:
+	Average age of students: 20.333333333333332
+
+
+

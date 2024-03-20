@@ -1,0 +1,83 @@
+5. You are given a JavaScript object representing a student's information. task is to 
+use the 'for...in' loop to iterate over the properties of the object and perform 
+various operations.
+
+const student = {
+    name: "Alice",
+    age: 22,
+    major: "Computer Science",
+    GPA: 3.8,
+    isEnrolled: true
+};
+
+// Iterate over the properties of the student object
+
+for (let property in student) {
+
+    // Check if the property is directly on the object and not inherited
+
+    if (student.hasOwnProperty(property)) {
+
+        // Perform various operations based on the property
+
+        switch (property) {
+            case "name":
+                console.log("Student's name:", student[property]);
+                break;
+            case "age":
+                console.log("Student's age:", student[property]);
+                break;
+            case "major":
+                console.log("Student's major:", student[property]);
+                break;
+            case "GPA":
+                console.log("Student's GPA:", student[property]);
+                break;
+            case "isEnrolled":
+                console.log("Is student enrolled?", student[property] ? "Yes" : "No");
+                break;
+            default:
+                console.log("Unknown property:", property);
+        }
+    }
+}
+
+
+Output:
+	
+	Student's name: Alice
+	Student's age: 22
+	Student's major: Computer Science
+	Student's GPA: 3.8
+	Is student enrolled? Yes
+
+
+a. Create a function displayStudentInfo that takes the student object as a parameter. 
+Inside this function, use a'for...in' loop to iterate over the properties of the 
+student object and print each property and its corresponding value to the console. 
+The output should look something like this:
+
+const student = {
+    name: "Alice",
+    age: 22,
+    major: "Computer Science",
+    GPA: 3.8,
+    isEnrolled: true
+};
+
+function displayStudentInfo(student){
+    // Iterate over the properties of the student object
+    for (let property in student) {
+        // Check if the property is directly on the object and not inherited
+        if (student.hasOwnProperty(property)) {
+            // Print the property and its corresponding value to the console
+            console.log(`Property : ${property}, Value: ${student[property]}`);
+        }
+    }        
+}
+
+displayStudentInfo(student);
+
+
+
+
